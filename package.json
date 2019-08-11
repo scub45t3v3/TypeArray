@@ -32,7 +32,7 @@
     "posttest": "mocha --reporter=markdown > TEST.md"
   },
   "engines": {
-    "node": ">= 8"
+    "node": ">= 8.10.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.6",
