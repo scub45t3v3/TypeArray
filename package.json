@@ -1,7 +1,7 @@
 {
   "name": "@scuba-squad/type-array",
   "description": "TypeArray is a Proxy allowing you to define validation of values that may be set",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "public": true,
   "main": "index.js",
   "license": "MIT",
