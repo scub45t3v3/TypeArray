@@ -25,10 +25,10 @@ describe('Factory', () => {
     unit
       .array(test)
       .isEmpty()
-      .given(test.push(/^asd/i))
+      .given(test.push(/^asd/iu))
       .array(test)
       .hasLength(1)
-      .given(test.push(new RegExp('asd', 'im')))
+      .given(test.push(new RegExp('asd', 'imu')))
       .array(test)
       .hasLength(2);
   }); // end it
@@ -50,7 +50,7 @@ describe('Factory', () => {
         test.push(Number);
       })
       .error(() => {
-        test.push([/asd/]);
+        test.push([/asd/u]);
       })
       .error(() => {
         test.push(Promise.resolve(5));
@@ -97,7 +97,7 @@ describe('#ErrorArray', () => {
         test.push([new Error('help')]);
       })
       .error(() => {
-        test.push(/asd/);
+        test.push(/asd/u);
       });
   }); // end it
 }); // end describe ErrorArray
@@ -141,7 +141,7 @@ describe('#FunctionArray', () => {
         test.push([Number, String]);
       })
       .error(() => {
-        test.push(/asd/);
+        test.push(/asd/u);
       });
   }); // end it
 }); // end descibe FunctionArray
@@ -185,7 +185,7 @@ describe('#PromiseArray', () => {
         test.push([Promise.resolve(1)]);
       })
       .error(() => {
-        test.push(/asd/);
+        test.push(/asd/u);
       });
   }); // end it
 }); // end descibe PromiseArray

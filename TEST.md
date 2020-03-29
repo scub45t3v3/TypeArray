@@ -30,10 +30,10 @@ const test = TypeArray('isRegExp')();
 unit
   .array(test)
   .isEmpty()
-  .given(test.push(/^asd/i))
+  .given(test.push(/^asd/iu))
   .array(test)
   .hasLength(1)
-  .given(test.push(new RegExp('asd', 'im')))
+  .given(test.push(new RegExp('asd', 'imu')))
   .array(test)
   .hasLength(2);
 ```
@@ -56,7 +56,7 @@ unit
     test.push(Number);
   })
   .error(() => {
-    test.push([/asd/]);
+    test.push([/asd/u]);
   })
   .error(() => {
     test.push(Promise.resolve(5));
@@ -106,7 +106,7 @@ unit
     test.push([new Error('help')]);
   })
   .error(() => {
-    test.push(/asd/);
+    test.push(/asd/u);
   });
 ```
 
@@ -153,7 +153,7 @@ unit
     test.push([Number, String]);
   })
   .error(() => {
-    test.push(/asd/);
+    test.push(/asd/u);
   });
 ```
 
@@ -200,7 +200,7 @@ unit
     test.push([Promise.resolve(1)]);
   })
   .error(() => {
-    test.push(/asd/);
+    test.push(/asd/u);
   });
 ```
 
