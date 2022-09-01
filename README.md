@@ -2,7 +2,7 @@
 
 <a name="status"></a>
 ## Status
-[![Build Status](https://travis-ci.org/scub45t3v3/TypeArray.svg?branch=master)](https://travis-ci.org/scub45t3v3/TypeArray)
+[![Build Status](https://github.com/scub45t3v3/typearray/workflows/CI/badge.svg?event=push)](https://github.com/scub45t3v3/typearray/actions)
 [![Coverage Status](https://coveralls.io/repos/github/scub45t3v3/TypeArray/badge.svg)](https://coveralls.io/github/scub45t3v3/TypeArray)
 
 <a name="toc"></a>
