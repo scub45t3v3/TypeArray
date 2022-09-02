@@ -24,10 +24,11 @@
     "validated-array"
   ],
   "scripts": {
-    "build": "grunt",
+    "build": "npm run lint",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "grunt eslint",
-    "pretest": "grunt",
+    "lint": "npx eslint ./",
+    "lint:fix": "npm run lint -- --fix",
+    "pretest": "npm run build",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha test",
     "posttest": "mocha --reporter markdown > TEST.md",
     "preversion": "npm test"
@@ -39,8 +40,6 @@
     "coveralls": "^3.0.6",
     "eslint": "^6.1.0",
     "eslint-config-scuba-squad": "^2.0.0",
-    "grunt": "^1.0.3",
-    "grunt-eslint": "^22.0.0",
     "mocha": "^7.2.0",
     "nyc": "^15.0.0",
     "unit.js": "^2.1.1"
